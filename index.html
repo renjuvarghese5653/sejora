@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SÉJORA Womenswear — A new chapter in women's fashion is coming soon." />
+  <title>SÉJORA — Womenswear | Coming Soon</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --cream: #f5ecdc;
+      --cream-2: #eee1cb;
+      --gold: #b88732;
+      --gold-dark: #80591d;
+      --ink: #241b12;
+      --muted: #776956;
+      --line: rgba(128, 89, 29, .28);
+      --white: #fffaf1;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    .page { min-height: 100vh; overflow: hidden; }
+
+    header {
+      height: 82px;
+      padding: 0 5.5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(248, 239, 224, .92);
+      border-bottom: 1px solid rgba(128, 89, 29, .12);
+      position: relative;
+      z-index: 5;
+    }
+
+    .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      letter-spacing: .14em;
+      color: var(--gold-dark);
+      font-weight: 500;
+    }
+
+    nav { display: flex; gap: 34px; align-items: center; }
+    nav a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 13px;
+      letter-spacing: .02em;
+      padding: 8px 0;
+      border-bottom: 1px solid transparent;
+    }
+    nav a:hover { border-color: var(--gold); color: var(--gold-dark); }
+
+    .hero {
+      min-height: calc(100vh - 82px);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding: 72px 24px 90px;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(255,255,255,.9), transparent 33%),
+        linear-gradient(115deg, #dfc6a0 0%, #f6ead7 32%, #fbf3e6 65%, #d7bd94 100%);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      opacity: .28;
+    }
+    .hero::before {
+      width: 520px;
+      height: 520px;
+      left: -220px;
+      top: 50px;
+      border-radius: 50%;
+      background: repeating-radial-gradient(circle, transparent 0 12px, rgba(128,89,29,.15) 13px 14px);
+      filter: blur(1px);
+    }
+    .hero::after {
+      width: 340px;
+      height: 650px;
+      right: -90px;
+      top: 20px;
+      border-left: 1px solid rgba(128,89,29,.35);
+      border-radius: 50%;
+      transform: rotate(18deg);
+    }
+
+    .hero-content { width: min(900px, 100%); position: relative; z-index: 1; }
+
+    .logo-wrap {
+      width: 285px;
+      height: 285px;
+      margin: 0 auto 28px;
+      border-radius: 50%;
+      padding: 10px;
+      background: linear-gradient(145deg, #f9e9c9, #b9832f, #f8e4bc, #8c601f);
+      box-shadow: 0 20px 45px rgba(67, 43, 13, .22), inset 0 0 0 1px rgba(255,255,255,.65);
+    }
+
+    .logo-wrap img {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+
+    .eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(54px, 7vw, 94px);
+      line-height: .94;
+      font-weight: 500;
+      letter-spacing: -.025em;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: 24px auto 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 23px;
+      line-height: 1.45;
+      color: #5c4b39;
+    }
+
+    .countdown {
+      margin: 48px auto 38px;
+      display: flex;
+      justify-content: center;
+      max-width: 720px;
+    }
+    .time {
+      width: 170px;
+      padding: 0 28px;
+      border-right: 1px solid var(--line);
+    }
+    .time:last-child { border-right: 0; }
+    .number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 61px;
+      line-height: .9;
+      font-weight: 500;
+    }
+    .label {
+      margin-top: 14px;
+      font-size: 10px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: #5d503f;
+    }
+
+    .notify {
+      display: flex;
+      width: min(590px, 100%);
+      margin: auto;
+      border: 1px solid var(--gold-dark);
+      border-radius: 999px;
+      padding: 5px;
+      background: rgba(255,250,241,.35);
+      box-shadow: 0 10px 30px rgba(75,45,10,.08);
+    }
+    .notify input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      padding: 15px 20px;
+      font: 14px Inter, sans-serif;
+      color: var(--ink);
+    }
+    .notify button {
+      border: 0;
+      border-radius: 999px;
+      padding: 0 29px;
+      background: linear-gradient(135deg, #9b6c22, #c4933d);
+      color: white;
+      font: 500 13px Inter, sans-serif;
+      letter-spacing: .04em;
+      cursor: pointer;
+    }
+    .notify button:hover { filter: brightness(1.07); }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #f9f0e1;
+      border-top: 1px solid rgba(128,89,29,.15);
+      border-bottom: 1px solid rgba(128,89,29,.15);
+    }
+    .feature { padding: 48px 25px; text-align: center; border-right: 1px solid var(--line); }
+    .feature:last-child { border-right: 0; }
+    .icon { font-size: 27px; color: var(--gold-dark); margin-bottom: 16px; }
+    .feature h3 { margin: 0; font: 600 19px 'Cormorant Garamond', serif; }
+    .feature p { margin: 8px auto 0; max-width: 180px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+
+    footer {
+      background: #20170f;
+      color: #e8d2a7;
+      text-align: center;
+      padding: 30px 20px;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: .28em;
+      font-size: 13px;
+    }
+    footer span { margin: 0 18px; color: #b98b3b; }
+
+    @media (max-width: 760px) {
+      header { height: 70px; padding: 0 20px; }
+      .wordmark { font-size: 27px; }
+      nav a:not(:last-child) { display: none; }
+      nav { gap: 16px; }
+      .hero { min-height: calc(100vh - 70px); padding: 48px 18px 65px; }
+      .logo-wrap { width: 220px; height: 220px; }
+      .eyebrow { font-size: 14px; letter-spacing: .24em; }
+      h1 { font-size: 55px; }
+      .subtitle { font-size: 20px; }
+      .countdown { margin: 38px auto 32px; }
+      .time { width: 25%; padding: 0 8px; }
+      .number { font-size: 39px; }
+      .label { font-size: 8px; letter-spacing: .16em; }
+      .notify { border-radius: 18px; flex-direction: column; padding: 6px; }
+      .notify input { padding: 14px; text-align: center; }
+      .notify button { height: 48px; }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .feature:nth-child(2) { border-right: 0; }
+      .feature:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="wordmark">SÉJORA</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
+        <a href="#notify" aria-label="Notify me">⌕</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-content">
+          <div class="logo-wrap">
+            <img src="assets/sejora-logo.jpg" alt="SÉJORA Womenswear logo" />
+          </div>
+
+          <div class="eyebrow">Elegance &nbsp; ✦ &nbsp; Style &nbsp; ✦ &nbsp; You</div>
+          <h1>We’re Launching Soon</h1>
+          <p class="subtitle">A new chapter in women’s fashion is on its way.<br />Stay tuned for something beautiful.</p>
+
+          <div class="countdown" aria-label="Launch countdown">
+            <div class="time"><div class="number" id="days">00</div><div class="label">Days</div></div>
+            <div class="time"><div class="number" id="hours">00</div><div class="label">Hours</div></div>
+            <div class="time"><div class="number" id="minutes">00</div><div class="label">Minutes</div></div>
+            <div class="time"><div class="number" id="seconds">00</div><div class="label">Seconds</div></div>
+          </div>
+
+          <form class="notify" id="notify" onsubmit="subscribe(event)">
+            <input id="email" type="email" placeholder="Enter your email address" required aria-label="Email address" />
+            <button type="submit">Notify Me&nbsp; →</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="features" id="about">
+        <div class="feature"><div class="icon">◇</div><h3>Premium Quality</h3><p>Carefully curated for every you.</p></div>
+        <div class="feature"><div class="icon">♢</div><h3>Fast & Reliable Shipping</h3><p>Your style, delivered with care.</p></div>
+        <div class="feature"><div class="icon">♙</div><h3>Secure Payments</h3><p>Shop with confidence.</p></div>
+        <div class="feature"><div class="icon">♡</div><h3>Women Empowerment</h3><p>Fashion that celebrates your strength.</p></div>
+      </section>
+    </main>
+
+    <footer id="contact">— <span>SÉJORA ✦ WOMENSWEAR</span> —</footer>
+  </div>
+
+  <script>
+    // Change this date to your actual launch date/time.
+    const launchDate = new Date('2026-11-15T00:00:00+05:30').getTime();
+
+    function updateCountdown() {
+      const diff = Math.max(0, launchDate - Date.now());
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    function subscribe(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      alert(`Thank you! We’ll notify ${email} when SÉJORA launches.`);
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
