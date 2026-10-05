@@ -18,7 +18,7 @@ export const STORE_CONFIG = {
   websiteUrl: "https://sejora.uk",
   // Standard international WhatsApp number without symbols (country code + number)
   // e.g. 447400000000 (UK) or 919876543210 (India). Configurable here:
-  whatsappNumber: "447400123456",
+  whatsappNumber: "919400945653",
   displayPhone: "+44 (0) 7400 123456",
   phoneTel: "+447400123456",
   email: "hello@sejora.uk",
