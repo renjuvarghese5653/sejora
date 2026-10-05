@@ -1,0 +1,6 @@
+{
+  "name": "Sejora | Women's Wear & Indian Fashion",
+  "description": "Discover elegant Indian women's wear and jewellery at Sejora. Explore sarees, kurtis, festive collections and timeless jewellery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
