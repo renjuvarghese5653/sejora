@@ -18,15 +18,15 @@ export const STORE_CONFIG = {
   websiteUrl: "https://sejora.uk",
   // Standard international WhatsApp number without symbols (country code + number)
   // e.g. 447400000000 (UK) or 919876543210 (India). Configurable here:
-  whatsappNumber: "919400945653",
-  displayPhone: "+44 (0) 7400 123456",
-  phoneTel: "+447400123456",
+  whatsappNumber: "447448460302",
+  displayPhone: "+44 (0) 7448 460302",
+  phoneTel: "+447448460302",
   email: "hello@sejora.uk",
   instagram: "https://instagram.com/sejora.uk",
   instagramHandle: "@sejora.uk",
   googleMapsUrl: "https://maps.google.com/?q=London,+Mayfair,+United+Kingdom",
   currencySymbol: "₹",
-  address: "Mayfair Luxury Suites, London, United Kingdom & Cochin, Kerala",
+  address: "Simms Garden, East Finchley, London, N28HT, United Kingdom",
   workingHours: "Monday – Saturday: 10:00 AM – 7:00 PM GMT",
 };
 
